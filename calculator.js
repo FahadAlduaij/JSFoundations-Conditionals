@@ -7,9 +7,6 @@ const operation  = prompt("(+, -, /, *): ");
 const secondNumber = prompt("Please enter the second number: ");
 let compute
 
-if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
-    return console.log("The numbers were invalid")
-};
 switch (operation) {
     case '+':
         compute = parseInt(firstNumber) + parseInt(secondNumber)
@@ -27,6 +24,8 @@ switch (operation) {
         return console.log("The operation is not valid")
 }   
 
+result = isNaN(firstNumber) || isNaN(secondNumber) ?
+ "The numbers were invalid" : 
+`${firstNumber} ${operation} ${secondNumber} = ${compute} `
 
-console.log(`${firstNumber} ${operation} ${secondNumber} = ${compute} `);
-
+console.log(result)
